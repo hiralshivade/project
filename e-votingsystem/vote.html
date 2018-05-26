@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>ONLINE VOTING SYSTEM</title>
+</head>
+<form action="vote.php" method="post">
+<body>
+<h1><b><font color='#FF0000'>ONLINE VOTING SYSTEM</b></h1>
+<table>
+<tr>
+<td>Name</td>
+<td><input type="text" name= "name" value= "name"></td>
+</tr>
+<tr>
+<td>Age</td>
+<td><input type= "number" name="age" value= "age"></td>
+</tr>
+<tr>
+<td>Gender</td>
+<td><input type="radio" name= "gender" value= "gender"><label>male</label>
+
+<input type="radio" name= "gender" value= "gender"><label>female</label></td>
+<tr>
+<td>Education</td>
+<td><input type= "text" name= "education" value= "education"></td>
+</tr>
+<tr>
+<td><font color='#FF0000'>Your vote</td>
+<td>
+<input type="radio" name= "c_name" value= "c_name"><label>Komal Diwe(NCP)</label>
+<input type="radio" name= "c_name" value= "c_name"><label>Hiral Shivade(BJP)</label>
+<input type="radio" name= "c_name" value= "c_name"><label>Manisha(INC)</label>
+</td>
+</tr>
+<tr><td><input type="submit" name="submit" value="submit"></td></tr>
+</table>
+</body>
+</html>
+<?php
+$name= $post[name];
+$age= $post[age];
+$gender= $post[gender];
+$education= $education[name];
+$c_name= $post[name];
+
+mysql connect_db('localhost'," ")
+if(isset($submit))
+	{
+	$connect = mysql_connect("localhost","root","");
+		$e= mysql_select_db("voting_system",$connect);
+		$sql="INSERT INTO register(name,age,gender,education,c_name)
+		VALUES('$name','$age','$gender','$education','$c_name')";
+	}
+?>
